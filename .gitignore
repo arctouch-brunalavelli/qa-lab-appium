@@ -1,0 +1,59 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+.installed.cfg
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# --- Test / tool caches ---
+.pytest_cache/
+.tox/
+.nox/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# --- Behave / Allure / reports (keep folder, drop generated artifacts) ---
+reports/*
+!reports/.gitkeep
+allure-results/
+allure-report/
+
+# --- IDE / editor ---
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# --- macOS ---
+.DS_Store
+
+# --- Appium / Android artifacts (do not commit binaries) ---
+*.apk
+*.ipa
+*.app/
+appium.log
+appium-*.log
+
+# --- Secrets / local config (never commit) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
