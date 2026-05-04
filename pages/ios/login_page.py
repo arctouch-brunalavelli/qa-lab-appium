@@ -14,7 +14,7 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 
 from pages.base_page import BasePage
-
+#locators for email and password
 _DEFAULT_USER = (AppiumBy.ACCESSIBILITY_ID, "loginUsername")
 _DEFAULT_PASS = (AppiumBy.ACCESSIBILITY_ID, "loginPassword")
 _DEFAULT_SUBMIT = (AppiumBy.ACCESSIBILITY_ID, "loginButton")

@@ -21,7 +21,7 @@ from pages.base_page import BasePage
 _EDIT_TEXT_AT = (
     'new UiSelector().className("android.widget.EditText").instance({i})'
 )
-
+#locators for email and password
 _DEFAULT_USER = (AppiumBy.ANDROID_UIAUTOMATOR, _EDIT_TEXT_AT.format(i=0))
 _DEFAULT_PASS = (AppiumBy.ANDROID_UIAUTOMATOR, _EDIT_TEXT_AT.format(i=1))
 _DEFAULT_SUBMIT = (AppiumBy.ACCESSIBILITY_ID, "Sign In")

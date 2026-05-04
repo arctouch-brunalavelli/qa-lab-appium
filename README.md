@@ -80,7 +80,7 @@ pip install -r requirements.txt
 You always need **three things** running before the tests:
 
 1. An **Android emulator** (or a real device) — verify with `adb devices`.
-2. The **app under test** installed on that device.
+2. The **App under test** installed on that device.
 3. The **Appium server** — start with the helper script (it exports `ANDROID_HOME`):
 
 ```bash
