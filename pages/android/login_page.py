@@ -1,11 +1,9 @@
 """
 Login screen — Android (UiAutomator2).
 
-The arctouch demo app is a React Native–style app: the EditText fields do not expose
-`resource-id` or `content-desc`, but the action buttons do expose `content-desc`.
-Strategy:
-  - Email / Password → UiAutomator `instance(N)` over `EditText` (top-to-bottom order)
-  - Sign In         → accessibility id ("Sign In")
+The build under test exposes proper resource-ids on the login widgets, so we
+locate by id (most stable, fastest, and language-independent). Each locator can
+still be overridden at runtime via env vars — see `_by_from_env` below.
 """
 from __future__ import annotations
 
@@ -18,13 +16,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from pages.base_page import BasePage
 
-_EDIT_TEXT_AT = (
-    'new UiSelector().className("android.widget.EditText").instance({i})'
-)
-#locators for email and password
-_DEFAULT_USER = (AppiumBy.ANDROID_UIAUTOMATOR, _EDIT_TEXT_AT.format(i=0))
-_DEFAULT_PASS = (AppiumBy.ANDROID_UIAUTOMATOR, _EDIT_TEXT_AT.format(i=1))
-_DEFAULT_SUBMIT = (AppiumBy.ACCESSIBILITY_ID, "Sign In")
+# Locators for the Login screen (resource-ids exposed by the app).
+_DEFAULT_USER = (AppiumBy.ID, "login_email_input")
+_DEFAULT_PASS = (AppiumBy.ID, "login_password_input")
+_DEFAULT_SUBMIT = (AppiumBy.ID, "login_sign_in_button")
 
 
 def _by_from_env(name: str, default: tuple[str, str]) -> tuple[str, str]:
